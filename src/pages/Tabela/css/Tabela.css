@@ -1,0 +1,8 @@
+
+@media(max-width: 600px)
+{
+    tr
+    {
+        font-size: .9rem;
+    }
+}

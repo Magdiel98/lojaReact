@@ -1,0 +1,225 @@
+.coluna
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.linha
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.nomesite
+{
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+}
+
+
+/*Cor de cabeçalho e de rodapé*/
+.cordefundo
+{
+    background-color: rgb(70, 70, 70);
+}
+
+
+
+/*Cor de fundo de botão*/
+button.corfundobotao
+{
+    background-color: rgb(144, 238, 144);
+}
+
+button.corfundobotao:hover
+{
+    background-color: rgb(95, 171, 95);
+}
+
+
+/*Cor de fundo botão login*/
+button.corfundologin{
+    background-color: rgb(173, 216, 230);
+}
+
+button.corfundologin:hover{
+    background-color: rgb(55, 152, 184);
+}
+
+
+
+/*Cor de fundo botão cadastro*/
+button.corfundocadastro
+{
+    background-color: rgb(252, 227, 89);
+}
+
+button.corfundocadastro:hover
+{
+    background-color: rgb(248, 213, 15);
+}
+
+
+
+/*Cor de fundo botão sair*/
+
+button.corfundosair
+{
+    background-color: rgb(239, 67, 75);
+}
+
+button.corfundosair:hover
+{
+    background-color: rgb(206, 17, 27);
+}
+
+/*Títulos em negrito*/
+.negrito
+{
+    font-weight: bold;
+}
+
+/*Tamanho informações*/
+.tamanho
+{
+    font-size: .9rem;
+}
+
+
+.ordempagamento
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.imgpagamento
+{
+    width: 2.3rem;
+    height: auto;
+    margin-right: 2rem;
+    margin-top: 1rem;
+}
+
+
+.corfundohamburguer
+{
+    background-color: rgb(120,120,120);
+}
+
+.corfundohamburguer:hover
+{
+    background-color: rgb(200, 200, 200);
+}
+
+.posicaof
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.backgroundcirculo
+{
+    background-color: rgb(230, 230, 230);
+}
+
+
+/*
+button#login
+{
+    display: none;
+}
+
+button#conta
+{
+    display: none;
+}
+
+button#sair
+{
+    display: none;
+}
+
+
+span#compras
+{
+    display: none;
+}
+*/
+
+
+.posicaofixa
+{
+    position: relative; 
+    top: 0; 
+}
+
+
+.corfundosacola
+{
+    background-color: rgb(253, 237, 145);
+}
+
+@media(max-width:1000px)
+{
+   
+}
+
+
+@media(max-width:1000px)
+{
+    .displaynavegacao
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .p1
+    {
+        order: 1;
+    }
+
+    .p2
+    {
+        order: 2;
+    }
+
+    .p3
+    {
+        order: 3;
+    }
+    
+    .posicaobotoes
+    {
+        display: flex; 
+        position: row; 
+    }
+    
+    .p4
+    {
+        order: 4; 
+    }
+
+    .p5
+    {
+        order: 5; 
+    }
+
+}
+
+
+@media(max-width: 995px)
+{
+    .posicaof
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .margemf
+    {
+        margin-right: 5rem;
+    }
+}
