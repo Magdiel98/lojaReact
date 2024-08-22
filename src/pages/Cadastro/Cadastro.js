@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import { auth } from '../../firebaseConfig'; 
 import {useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Form, useNavigate } from 'react-router-dom';
 
 function Cadastro(){
     
@@ -40,7 +40,7 @@ function Cadastro(){
     ] = useCreateUserWithEmailAndPassword(auth);
     const navigate = useNavigate();
 
-
+    /*
     function handleSignOut(e)
     {
         e.preventDefault();
@@ -52,7 +52,7 @@ function Cadastro(){
                 console.error(err);
             });
     }
-
+    */
 
     const handleChangeEmail = (e) => {
         handleInputChange(e);
@@ -65,6 +65,7 @@ function Cadastro(){
     };
 
     //Criar uma função para enviar dados para o banco de dados 
+    /*
     function cadastrarUsuario()
     {
 
@@ -84,6 +85,35 @@ function Cadastro(){
             console.error("Deu errado!");
         })
     }
+    */
+
+    function cadastrarUsuario()
+    {
+        createUserWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                const userId = userCredential.user.uid;
+
+                fetch(`https://lojareact-7a7e1-default-rtdb.firebaseio.com/usuario/${userId}.json`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                })
+                .then(() => {
+                    console.log("Usuário cadastrado com sucesso!");
+                    navigate("/login");
+                })
+                .catch((error) => {
+                    console.error("Erro ao salvar os dados do usuário: ", error);
+                });
+
+            })
+            .catch((err) => {
+                console.error("Erro ao criar o usuário: ", err);
+            });
+    }
+
 
     return(
         <main className="container py-5">
@@ -230,7 +260,7 @@ function Cadastro(){
                     </div>
 
                     <div className="d-flex justify-content-center">
-                        <button type="button" className="btn bg-success text-white mt-5 shadow w-25" id="cadastrar" onClick={(e) => {cadastrarUsuario(); handleSignOut(e);}}>Cadastrar</button>
+                        <button type="button" className="btn bg-success text-white mt-5 shadow w-25" id="cadastrar" onClick={cadastrarUsuario}>Cadastrar</button>
                     </div>
                 </div>
             </form>
